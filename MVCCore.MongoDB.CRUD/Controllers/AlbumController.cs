@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MVCCore.MongoDB.CRUD.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace MVCCore.MongoDB.CRUD.Controllers
 {
     public class AlbumController : Controller
     {
+        private IAlbumCollection db = new AlbumCollection();
+
         // GET: AlbumController
         public ActionResult Index()
         {
